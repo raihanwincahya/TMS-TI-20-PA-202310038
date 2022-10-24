@@ -12,15 +12,15 @@ public class ProgramServices {
   @Autowired
   private ProgramRepo programRepo;
 
-  public Program_study save(Program_study program){
+  public Programs save(Programs program){
     return programRepo.save(program);
   }
 
-  public Program_study findOne(int id){
+  public Programs findOne(int id){
     return programRepo.findById(id).get();
   }
 
-  public Iterable<Program_study> findAll(){
+  public Iterable<Programs> findAll(){
     return programRepo.findAll();
   }
 

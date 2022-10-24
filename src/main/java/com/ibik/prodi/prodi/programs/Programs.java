@@ -8,10 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="programs")
-public class Program implements Serializable {
+public class Programs implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
@@ -20,18 +21,18 @@ public class Program implements Serializable {
   private int id;
 
   @Column(length = 20)
+  @NotEmpty(message = "Name is required")
   private String name;
 
-  @Column(length = 20)
   private String description;
   
-  @Column(nullable = false, columnDefinition = "TINYINT(1)")
+  @Column(columnDefinition = "TINYINT(1)")
   private boolean is_active;
 
-  public Program() {
+  public Programs() {
   }
 
-  public Program(int id, String name, String description, boolean is_active) {
+  public Programs(int id, String name, String description, boolean is_active) {
     this.id = id;
     this.name = name;
     this.description = description;
